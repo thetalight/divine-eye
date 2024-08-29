@@ -1,0 +1,3 @@
+[workspace]
+members = [ "circle-stark"]
+resolver = "2"
