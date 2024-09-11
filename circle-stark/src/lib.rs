@@ -1,3 +1,6 @@
+#[cfg(test)]
+pub mod test_plonky3;
+
 pub fn add(left: usize, right: usize) -> usize {
     left + right
 }

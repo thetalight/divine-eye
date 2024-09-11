@@ -42,11 +42,17 @@ def get_generator(field):
             return (X_pt, Y_pt)
     raise Exception("Could not find generator")
 
+def get_default_generator(field):
+    X_pt = field(2)
+    Y_pt = field(1268011823)
+    return (X_pt, Y_pt)
+
 def get_initial_domain_of_size(field, size):
     assert size < field(0).modulus
-    G = get_generator(field)
+    G = get_default_generator(field)
     for i in range(log2((field.modulus + 1) // size) - 1):
         G = point_double(G)
+    # print(G)    
     Gx2 = point_double(G)
     o = [G]
     for i in range(1, size):

@@ -7,8 +7,9 @@ test_stark_output = None
 
 def test_fft():
     INPUT_SIZE = 8
-    data = [B(i+1) for i in range(INPUT_SIZE)]
+    data = [B(i) for i in range(INPUT_SIZE)]
     coeffs = fft(data)
+    print(coeffs)
     data2 = inv_fft(coeffs)
     assert data2 == data
     print("Basic FFT test passed")
