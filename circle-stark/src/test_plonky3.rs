@@ -12,12 +12,10 @@ fn test_domain() {
 
     let g = Point::generator(log_n);
     let shift = Point::generator(log_n + 1);
-
     assert_eq!(g, shift.double());
 
     let points = iterate(shift, move |&p| p + g)
         .take(1 << log_n)
         .collect::<Vec<_>>();
-
     assert_eq!(d.points().collect::<Vec<_>>(), points);
 }
