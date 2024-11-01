@@ -18,4 +18,11 @@ fn test_domain() {
         .take(1 << log_n)
         .collect::<Vec<_>>();
     assert_eq!(d.points().collect::<Vec<_>>(), points);
+
+    {
+        // the output is [-shift+g, -shift+2g, -shift+3g,..., -shift]
+        // -shift at the end
+        let coset1 = d.coset1().collect::<Vec<_>>();
+        assert_eq!(*coset1.last().unwrap(), -shift);
+    }
 }

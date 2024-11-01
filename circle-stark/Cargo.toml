@@ -8,6 +8,5 @@ p3-circle = { git = "https://github.com/thetalight/Plonky3.git" }
 p3-field = { git = "https://github.com/thetalight/Plonky3.git" }
 p3-mersenne-31 = { git = "https://github.com/thetalight/Plonky3.git" }
 
-
 itertools = "0.13.0"
 criterion = "0.5.1"
